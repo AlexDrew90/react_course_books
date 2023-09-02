@@ -1,6 +1,6 @@
-let BookShow = () => {
+let BookShow = ( {book} ) => {
 
-  return <div>Book Show</div>
+  return <div className="book-show">{ book.title }</div>
 };
 
 export default BookShow;
