@@ -15,7 +15,7 @@ let BookShow = ( {book, onDelete} ) => {
 
   let content = <h3>{ book.title }</h3>
   if (showEdit){
-    content = < BookEdit />;
+    content = < BookEdit book={book} />;
   }
 
   return <div className="book-show">
