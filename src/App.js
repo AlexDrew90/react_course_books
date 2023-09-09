@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from 'axios';
 import BookCreate from "./components/BookCreate";
 import BookList from "./components/BookList";
@@ -12,6 +12,10 @@ let App = () => {
    setBooks(response.data);
 
   };
+
+  useEffect(() => {
+    fetchBooks();
+  }, []);
 
   const editBookById = (id, newTitle) => {
 
