@@ -19,9 +19,9 @@ let App = () => {
 
   const editBookById = async (id, newTitle) => {
 
-    await.axios.put(`http://localhost:3001/books/${id}`, {
-      title: newTitle,
-    })
+    let response = await axios.put(`http://localhost:3001/books/${id}`, {
+    title: newTitle,
+  })
 
     const updatedBooks = books.map((book) => {
       if(book.id === id ){
@@ -32,7 +32,9 @@ let App = () => {
     setBooks(updatedBooks);
   };
 
-  const deleteBookById = (id) => {
+  const deleteBookById = async (id) => {
+
+    await axios.delete(`http://localhost:3001/books/${id}`);
 
     const updatedBooks = books.filter((i) => {
       return i.id !== id;
